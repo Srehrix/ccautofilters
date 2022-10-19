@@ -69,10 +69,7 @@ async def run_async(func, *args, **kwargs):
     return await loop.run_in_executor(None, func, *args, **kwargs)
 
 
-
-url_filter = pornhub
-
-@Client.on_message(url_filter)
+@Client.on_message(pornhub)
 async def options(c: Client, m: Message):
     print(m.text)
     await m.reply_text(
