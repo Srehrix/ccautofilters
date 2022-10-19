@@ -69,7 +69,7 @@ async def run_async(func, *args, **kwargs):
     return await loop.run_in_executor(None, func, *args, **kwargs)
 
 
-@Client.on_message(pornhub)
+(filters.private & filters.regex(pattern=".*http.*"))
 async def options(c: Client, m: Message):
     print(m.text)
     await m.reply_text(
