@@ -35,6 +35,7 @@ def humanbytes(size):
 
 def edit_msg(client, message, to_edit):
     try:
+        await asyncio.sleep(4)
         client.loop.create_task(message.edit(to_edit))
     except MessageNotModified:
         pass
