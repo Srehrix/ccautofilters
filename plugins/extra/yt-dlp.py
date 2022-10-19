@@ -68,13 +68,9 @@ async def run_async(func, *args, **kwargs):
     loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, func, *args, **kwargs)
 
-def url(filter, client, update):
-    if "www.pornhub" in update.text:
-        return True
-    else:
-        return False
 
-url_filter = filters.create(url, name="url_filter")
+
+url_filter = filters.create(www.pornhub, name="url_filter")
 
 @Client.on_message(url_filter)
 async def options(c: Client, m: Message):
