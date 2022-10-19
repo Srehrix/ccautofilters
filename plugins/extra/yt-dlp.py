@@ -70,7 +70,7 @@ async def run_async(func, *args, **kwargs):
 
 
 
-url_filter = filters.create(www.pornhub, name="url_filter")
+url_filter = www.pornhub
 
 @Client.on_message(url_filter)
 async def options(c: Client, m: Message):
