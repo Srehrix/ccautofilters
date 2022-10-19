@@ -1,3 +1,79 @@
+import os
+import asyncio
+import youtube_dl
+import threading
+
+from ..config import log_chat, sub_chat
+from pornhub_api import PornhubApi
+from pornhub_api.backends.aiohttp import AioHttpBackend
+from youtube_dl.utils import DownloadError
+
+from pyrogram import Client, filters
+from pyrogram.types import (
+    Message, InlineQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    CallbackQuery,
+    InlineQueryResultArticle,
+    InputTextMessageContent,
+)
+from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden, MessageNotModified, FloodWait
+
+def humanbytes(size):
+    if not size:
+        return ""
+    power = 2 ** 10
+    raised_to_pow = 0
+    dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
+    while size > power:
+        size /= power
+        raised_to_pow += 1
+    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
+
+
+def edit_msg(client, message, to_edit):
+    try:
+        client.loop.create_task(message.edit(to_edit))
+    except MessageNotModified:
+        pass
+    except FloodWait as e:
+        client.loop.create_task(asyncio.sleep(e.value))
+    except TypeError:
+        pass
+
+
+def download_progress_hook(d, message, client):
+    if d['status'] == 'downloading':
+        current = d.get("_downloaded_bytes_str") or humanbytes(int(d.get("downloaded_bytes", 1)))
+        total = d.get("_total_bytes_str") or d.get("_total_bytes_estimate_str")
+        file_name = d.get("filename")
+        eta = d.get('_eta_str', "N/A")
+        percent = d.get("_percent_str", "N/A")
+        speed = d.get("_speed_str", "N/A")
+        to_edit = f"📥 <b>Downloading!</b>\n\n<b>Name :</b> <code>{file_name}</code>\n<b>Size :</b> <code>{total}</code>\n<b>Speed :</b> <code>{speed}</code>\n<b>ETA :</b> <code>{eta}</code>\n\n<b>Percentage: </b> <code>{current}</code> from <code>{total} (__{percent}__)</code>"
+        threading.Thread(target=edit_msg, args=(client, message, to_edit)).start()
+
+if os.path.exists("downloads"):
+    print("✅ file is exist")
+else:
+    print("✅ file has made")
+
+
+active = []
+queues = []
+
+async def run_async(func, *args, **kwargs):
+    loop = asyncio.get_running_loop()
+    return await loop.run_in_executor(None, func, *args, **kwargs)
+
+def url(filter, client, update):
+    if "www.pornhub" in update.text:
+        return True
+    else:
+        return False
+
+url_filter = filters.create(url, name="url_filter")
+
 @Client.on_message(url_filter)
 async def options(c: Client, m: Message):
     print(m.text)
