@@ -39,7 +39,7 @@ def edit_msg(client, message, to_edit):
     except MessageNotModified:
         pass
     except FloodWait as e:
-        client.loop.create_task(asyncio.sleep(e.value))
+        client.loop.create_task(asyncio.sleep(5))
     except TypeError:
         pass
 
