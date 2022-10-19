@@ -3,7 +3,6 @@ import asyncio
 import youtube_dl
 import threading
 
-from ..config import log_chat, sub_chat
 from pornhub_api import PornhubApi
 from pornhub_api.backends.aiohttp import AioHttpBackend
 from youtube_dl.utils import DownloadError
@@ -18,6 +17,9 @@ from pyrogram.types import (
     InputTextMessageContent,
 )
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden, MessageNotModified, FloodWait
+
+log_chat: int = -1761918450
+sub_chat: str = "vysakh_xd"
 
 def humanbytes(size):
     if not size:
