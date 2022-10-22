@@ -1,6 +1,5 @@
 from pyrogram import Client, filters
-
-CAPTION =```{name}```
+from info import CAPTION
 
 async def get_size(size):
     p=size/1048597           #size in MB
