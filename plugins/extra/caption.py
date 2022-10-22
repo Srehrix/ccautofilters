@@ -26,7 +26,7 @@ async def get_caption(name):
 async def start(bot, message):
     await message.reply(f"Hello {message.from_user.mention},\nI will edit channel message's captions.\nAdd me to your channel with necessary permissions.")
 
-@Client.on_message(filters.channel & filters.document) #add more filters if you want.
+@Client.on_message(filters.channel & (filters.document | filters.audio | filters.video)) #add more filters if you want.
 async def caption(bot, message):
    try:
        await message.edit(CAPTION.format(name=await get_caption(message.document.file_name),    
