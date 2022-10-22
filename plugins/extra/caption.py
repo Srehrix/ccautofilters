@@ -28,8 +28,7 @@ async def start(bot, message):
 @Client.on_message(filters.channel & (filters.document | filters.audio | filters.video)) #add more filters if you want.
 async def caption(bot, message):
    try:
-       await message.edit(CAPTION.format(name=await get_caption(message.document.file_name),    
-                                         size=await get_size(message.document.file_size))
+       await message.edit(f"```{message.document.file_name}```"
                           )
    except Exception as e:
        print(e)
