@@ -73,7 +73,7 @@ def download_progress_hook(d, message, client):
         to_edit = f"📥 <b>Downloading!</b>\n\n<b>Name :</b> <code>{file_name}</code>\n<b>Size :</b> <code>{total}</code>\n<b>Speed :</b> <code>{speed}</code>\n<b>ETA :</b> <code>{eta}</code>\n\n<b>Percentage: </b> <code>{current}</code> from <code>{total} (__{percent}__)</code>"
         try:
             await message.edit(
-                text="no\n\nhi".format(message, to_edit)
+                text="no\n\nhi".format(d, to_edit)
 
 @Client.on_message(url_filter)
 async def options(c: Client, m: Message):
