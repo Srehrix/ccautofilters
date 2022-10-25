@@ -52,7 +52,6 @@ def humanbytes(size):
         raised_to_pow += 1
     return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
 
-
 def edit_msg(client, message, to_edit):
     try:
         client.loop.create_task(message.edit(to_edit))
@@ -62,7 +61,6 @@ def edit_msg(client, message, to_edit):
         pass
     except TypeError:
         pass
-
 
 def download_progress_hook(d, message, client):
     if d['status'] == 'downloading':
