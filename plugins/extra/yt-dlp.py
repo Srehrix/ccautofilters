@@ -91,3 +91,6 @@ async def get_video(c: Client, q: CallbackQuery):
             break
         else:
             continue
+
+    await msg.delete()
+    active.remove(user_id)
