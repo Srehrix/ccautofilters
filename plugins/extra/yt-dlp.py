@@ -18,6 +18,16 @@ from pyrogram.types import (
 )
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden, MessageNotModified, FloodWait
 
+
+PROGRESS_BAR = """\n
+╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣
+┣⪼ 🗂️ : {1} | {2}
+┣⪼ ⏳️ : {0}%
+┣⪼ 🚀 : {3}/s
+┣⪼ ⏱️ : {4}
+╰━━━━━━━━━━━━━━━➣ """
+
+
 async def run_async(func, *args, **kwargs):
     loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, func, *args, **kwargs)
