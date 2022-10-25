@@ -90,11 +90,6 @@ async def get_video(c: Client, q: CallbackQuery):
     msg = await q.message.edit("Downloading...")
     user_id = q.message.from_user.id
 
-    if "some" in active:
-        await q.message.edit("Sorry, you can only download videos at a time!")
-        return
-    else:
-        active.append(user_id)
 
     ydl_opts = {
             "progress_hooks": [lambda d: download_progress_hook(d, q.message, c)]
