@@ -21,10 +21,10 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 
 PROGRESS_BAR = """\n
 ╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱━➣
-┣⪼ 🗂️ : <code>{}</code>
-┣⪼ ⏳️ : <code>{}</code>
-┣⪼ 🚀 : <code>{}</code>
-┣⪼ ⏱️ : <code>{}</code>
+┣⪼ 🗂️ : {1} | {2}
+┣⪼ ⏳️ : {0}%
+┣⪼ 🚀 : {3}/s
+┣⪼ ⏱️ : {4}
 ╰━━━━━━━━━━━━━━━➣ """
 
 
@@ -39,6 +39,18 @@ def url(filter, client, update):
         return False
 
 url_filter = filters.create(url, name="url_filter")
+
+
+def humanbytes(size):
+    if not size:
+        return ""
+    power = 2 ** 10
+    raised_to_pow = 0
+    dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
+    while size > power:
+        size /= power
+        raised_to_pow += 1
+    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
 
 def edit_msg(client, message, to_edit):
     try:
@@ -59,19 +71,8 @@ def download_progress_hook(d, message, client):
         percent = d.get("_percent_str", "N/A")
         speed = d.get("_speed_str", "N/A")
         to_edit = f"📥 <b>Downloading!</b>\n\n<b>Name :</b> <code>{file_name}</code>\n<b>Size :</b> <code>{total}</code>\n<b>Speed :</b> <code>{speed}</code>\n<b>ETA :</b> <code>{eta}</code>\n\n<b>Percentage: </b> <code>{current}</code> from <code>{total} (__{percent}__)</code>"
-        threading.Thread(target=edit_msg, args=(client, message, to_edit))
+        threading.Thread(target=edit_msg, args=(client, message, to_edit)).start()
 
-def humanbytes(size):
-    if not size:
-        return ""
-    power = 2 ** 10
-    raised_to_pow = 0
-    dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
-    while size > power:
-        size /= power
-        raised_to_pow += 1
-    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
-       
 @Client.on_message(url_filter)
 async def options(c: Client, m: Message):
     await m.reply_text(
