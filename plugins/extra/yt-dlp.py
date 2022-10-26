@@ -114,7 +114,7 @@ async def get_video(c: Client, q: CallbackQuery):
         if file.endswith(".mp4"):
             await q.message.reply_video(
                 f"{file}",
-                thumb="assets/logo.jpg",
+                thumb=vid.thumb,
                 width=1280,
                 height=720,
                 caption="The content you requested has been successfully downloaded!",
