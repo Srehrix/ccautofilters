@@ -97,9 +97,7 @@ async def get_video(c: Client, q: CallbackQuery):
     url = q.data.split("_",1)[1]
     msg = await q.message.edit("Downloading...")
     user_id = q.message.from_user.id
-    vid_url = q.matches[0].group(0)
-    yt_vid = ydl(vid_url)
-    vid_turl = yt_vid.thumbnail_url
+    
     ydl_opts = {
             "progress_hooks": [lambda d: download_progress_hook(d, q.message, c)]
         }
@@ -115,7 +113,6 @@ async def get_video(c: Client, q: CallbackQuery):
         if file.endswith(".mp4"):
             await q.message.reply_video(
                 f"{file}",
-                thumb=vid_turl,
                 width=1280,
                 height=720,
                 caption="The content you requested has been successfully downloaded!",
