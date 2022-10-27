@@ -79,7 +79,7 @@ async def options(c: Client, m: Message):
         "Tap the button to continue action!", 
         reply_markup=InlineKeyboardMarkup(
              [[
-            InlineKeyboardButton('⬇️ 1920x1080 <b>Size :</b> <code>{total}</code>', callback_data=f"a_{m.text}")
+            InlineKeyboardButton(f'⬇️ 1920x1080 <b>Size :{total}', callback_data=f"a_{m.text}")
         ], [
             InlineKeyboardButton('⬇️ 1280x720', callback_data=f"b_{m.text}")
         ], [
