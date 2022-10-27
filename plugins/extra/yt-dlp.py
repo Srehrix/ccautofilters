@@ -87,7 +87,7 @@ async def options(c: Client, m: Message):
         ], [
             InlineKeyboardButton('⬇️ 426x240', callback_data=f"d_{m.text}")
         ]]))
-@Client.on_callback_query(filters.regex("^a))
+@Client.on_callback_query(filters.regex("^a"))
 async def get_video(c: Client, q: CallbackQuery):
     url = q.data.split("_",1)[1]
     msg = await q.message.edit("Downloading...")
