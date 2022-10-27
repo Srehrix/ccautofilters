@@ -78,20 +78,14 @@ async def options(c: Client, m: Message):
     await m.reply_text(
         "Tap the button to continue action!", 
         reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "Download", callback_data=f"d_{m.text}",
-                    ),
-                ],[
-                    InlineKeyboardButton(
-                        "watch in web", url=m.text,
-                    ),
-                ],
-            ],
-        ),
-    )
-
+             [[
+            InlineKeyboardButton('⬇️ 1280x720', callback_data=f"d_{m.text}")
+        ], [
+            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
+        ], [
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('😊 About', callback_data='about')
+        ]]))
 @Client.on_callback_query(filters.regex("^d"))
 async def get_video(c: Client, q: CallbackQuery):
     url = q.data.split("_",1)[1]
