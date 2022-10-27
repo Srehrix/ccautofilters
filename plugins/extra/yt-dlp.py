@@ -83,9 +83,7 @@ async def options(c: Client, m: Message):
         ], [
             InlineKeyboardButton('⬇️ 854x480', callback_data=f"c_{m.text}")
         ], [
-            InlineKeyboardButton('⬇️ 854x480', callback_data=f"c_{m.text}"),
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('⬇️ 426x240', callback_data=f"d_{m.text}")
         ]]))
 @Client.on_callback_query(filters.regex("^c"))
 async def get_video(c: Client, q: CallbackQuery):
