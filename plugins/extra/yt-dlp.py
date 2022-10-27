@@ -98,7 +98,7 @@ async def get_video(c: Client, q: CallbackQuery):
     msg = await q.message.edit("Downloading...")
     user_id = q.message.from_user.id
     vid_url = q.matches[0].group(0)
-    yt_vid = yt(vid_url)
+    yt_vid = ydl(vid_url)
     vid_turl = yt_vid.thumbnail_url
     ydl_opts = {
             "progress_hooks": [lambda d: download_progress_hook(d, q.message, c)]
