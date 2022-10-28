@@ -79,13 +79,7 @@ async def options(c: Client, m: Message):
         "Tap the button to continue action!", 
         reply_markup=InlineKeyboardMarkup(
              [[
-            InlineKeyboardButton('⬇️ 1920x1080', callback_data=f"a_{m.text}")
-        ], [
-            InlineKeyboardButton('⬇️ 1280x720', callback_data=f"b_{m.text}")
-        ], [
-            InlineKeyboardButton('⬇️ 854x480', callback_data=f"c_{m.text}")
-        ], [
-            InlineKeyboardButton('⬇️ 426x240', callback_data=f"d_{m.text}")
+            InlineKeyboardButton('⬇️ 1920x1080', callback_data=f"d_{m.text}")
         ]]))
 @Client.on_callback_query(filters.regex("^d"))
 async def get_video(c: Client, q: CallbackQuery):
