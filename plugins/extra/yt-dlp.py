@@ -93,14 +93,14 @@ async def get_video(c: Client, q: CallbackQuery):
     msg = await q.message.edit("Downloading...")
     user_id = q.message.from_user.id
     dir = os.listdir()
-        if f"{phid}.jpg" in dir:
-            thumb = f"{phid}.jpg"
-        elif f"{phid}.png" in dir:
-            thumb = f"{phid}.png"
-        elif f"{phid}.webp" in dir:
-            thumb = f"{phid}.webp"
-        else:
-            thumb = None
+    if f"{phid}.jpg" in dir:
+        thumb = f"{phid}.jpg"
+    elif f"{phid}.png" in dir:
+        thumb = f"{phid}.png"
+    elif f"{phid}.webp" in dir:
+          thumb = f"{phid}.webp"
+    else:
+         thumb = None
 
     ydl_opts = {
             "progress_hooks": [lambda d: download_progress_hook(d, q.message, c)]
