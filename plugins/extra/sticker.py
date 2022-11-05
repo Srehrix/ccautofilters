@@ -141,7 +141,7 @@ async def create_sticker(
     return raw.types.InputStickerSetItem(document=sticker, emoji=emoji)
 
 @Client.on_message(filters.command("kang"))
-async def kang(client, message: Message):
+async def kang(client, message):
     BOT_USERNAME = client.username
     if not message.reply_to_message:
         return await message.reply_text("Reply to a sticker/image to kang it.")
