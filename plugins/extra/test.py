@@ -103,17 +103,7 @@ async def inline_search(c: Client, q: InlineQuery):
 @Client.on_callback_query(filters.regex("^d"))
 async def get_video(c: Client, q: CallbackQuery):
     url = q.data.split("_",1)[1]
-    ydl_opts = {
-            "progress_hooks": [lambda d: download_progress_hook(d, q.message, c)]
-        }
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        try:
-            await run_async(ydl.download, [url])
-        except DownloadError:
-            await q.message.edit("Sorry, an error occurred")
-            return
-
-
+    
         if file.endswith(".mp4"):
             await q.message.reply_video(
                 f"{file}",
