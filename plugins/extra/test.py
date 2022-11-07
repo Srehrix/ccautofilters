@@ -21,7 +21,7 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 active = []
 queues = []
 
-@Client.on_inline_query(filters.user(ADMINS))
+@Client.on_inline_query()
 async def inline_search(c: Client, q: InlineQuery):
     query = q.query
     backend = AioHttpBackend()
