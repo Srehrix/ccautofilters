@@ -1,3 +1,26 @@
+import os
+import asyncio
+import youtube_dl
+
+from pornhub_api import PornhubApi
+from pornhub_api.backends.aiohttp import AioHttpBackend
+from youtube_dl.utils import DownloadError
+from pyrogram import Client, filters
+from pyrogram.types import (
+    Message, InlineQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    CallbackQuery,
+    InlineQueryResultArticle,
+    InputTextMessageContent,
+)
+from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
+ 
+
+
+active = []
+queues = []
+
 @Client.on_inline_query()
 async def inline_search(c: Client, q: InlineQuery):
     query = q.query
