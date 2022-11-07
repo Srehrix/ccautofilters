@@ -114,7 +114,6 @@ async def get_video(c: Client, q: CallbackQuery):
             return
 
 
-     for file in os.listdir('.'):
         if file.endswith(".mp4"):
             await q.message.reply_video(
                 f"{file}",
