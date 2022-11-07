@@ -103,7 +103,7 @@ async def inline_search(c: Client, q: InlineQuery):
 @Client.on_callback_query(filters.regex("^d"))
 async def get_video(c: Client, q: CallbackQuery):
     url = q.data.split("_",1)[1]
-    msg = await q.message.edit("Downloading...")
+    msg = await q.message.reply_text("Downloading...")
     user_id = q.message.from_user.id
 
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
