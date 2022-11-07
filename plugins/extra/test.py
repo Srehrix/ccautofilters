@@ -104,7 +104,7 @@ async def inline_search(c: Client, q: InlineQuery):
 async def get_video(c: Client, q: CallbackQuery):
     url = q.data.split("_",1)[1]
     
-        if file.endswith(".mp4"):
+      
             await q.message.reply_video(
                 f"{file}",
                 thumb=f"{thumb_url}",
