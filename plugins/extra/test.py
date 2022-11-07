@@ -16,6 +16,10 @@ from pyrogram.types import (
 )
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
  
+if os.path.exists("downloads"):
+    print("✅ file is exist")
+else:
+    print("✅ file has made")
 
 
 active = []
