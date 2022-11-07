@@ -94,3 +94,35 @@ async def inline_search(c: Client, q: InlineQuery):
         switch_pm_text="• Results •",
         switch_pm_parameter="start",
     )
+
+
+@Client.on_callback_query(filters.regex("^d"))
+async def get_video(c: Client, q: CallbackQuery):
+    url = q.data.split("_",1)[1]
+    msg = await q.message.edit("Downloading...")
+    user_id = q.message.from_user.id
+
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        try:
+            await run_async(ydl.download, [url])
+        except DownloadError:
+            await q.message.edit("Sorry, an error occurred")
+            return
+
+
+     for file in os.listdir('.'):
+        if file.endswith(".mp4"):
+            await q.message.reply_video(
+                f"{file}",
+                thumb="downloads/src/pornhub.jpeg",
+                width=1280,
+                height=720,
+                caption="The content you requested has been successfully downloaded!",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("• Donate •", url="https://trakteer.id/levina-crqid/tip"),
+                        ],
+                    ],
+                ),
+            )
