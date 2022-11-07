@@ -25,7 +25,7 @@ else:
 active = []
 queues = []
 
-@Client.on_inline_query(filters.command("p") & filters.user(ADMINS))
+@Client.on_inline_query()
 async def inline_search(c: Client, q: InlineQuery):
     query = q.query
     backend = AioHttpBackend()
@@ -117,7 +117,7 @@ async def get_video(c: Client, q: CallbackQuery):
         if file.endswith(".mp4"):
             await q.message.reply_video(
                 f"{file}",
-                thumb="downloads/src/pornhub.jpeg",
+                thumb=f"{vid.url}",
                 width=1280,
                 height=720,
                 caption="The content you requested has been successfully downloaded!",
