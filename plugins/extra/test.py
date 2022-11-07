@@ -1,7 +1,7 @@
 import os
 import asyncio
 import youtube_dl
-
+from info import ADMINS
 from pornhub_api import PornhubApi
 from pornhub_api.backends.aiohttp import AioHttpBackend
 from youtube_dl.utils import DownloadError
@@ -21,7 +21,7 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 active = []
 queues = []
 
-@Client.on_inline_query("p")
+@Client.on_inline_query("p")  & filters.user(ADMINS)
 async def inline_search(c: Client, q: InlineQuery):
     query = q.query
     backend = AioHttpBackend()
