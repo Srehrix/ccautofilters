@@ -25,7 +25,7 @@ else:
 active = []
 queues = []
 
-@Client.on_inline_query(filters.regex("pH!"))
+@Client.on_inline_query(filters.regex("!"))
 async def inline_search(c: Client, q: InlineQuery):
     query = q.query
     backend = AioHttpBackend()
