@@ -141,14 +141,13 @@ async def get_video(c: Client, q: CallbackQuery):
             "progress_hooks": [lambda d: download_progress_hook(d, q.message, c)]
         }
 
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        try:
-            await run_async(ydl.download, [url])
-        except DownloadError:
-            await q.message.edit("Sorry, an error occurred")
-            return
-
-
+    with youtube_dl.YoutubeDL({}) as ydl:
+        info = ydl.extract_info(url, download=False)
+        gdown = await asyncio.create_subprocess_shell(
+            f"yt-dlp {url} --write-thumbnail -o '%(id)s.mp4'",
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+    )
     for file in os.listdir('.'):
         if file.endswith(".mp4"):
             await q.message.reply_video(
