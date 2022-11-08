@@ -98,7 +98,7 @@ async def inline_search(c: Client, q: InlineQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Download", callback_data=f"d_{vid.url}"),
+                            InlineKeyboardButton("watch in web", url=m.text")
                         ],
                     ],
                 ),
