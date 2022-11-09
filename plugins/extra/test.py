@@ -51,7 +51,8 @@ async def inline_search(c: Client, q: InlineQuery):
                 title="Search Anything",
                 description="Type something to search",
                 input_message_content=InputTextMessageContent(
-                    message_text="servh something\n\nEg:- ```@LisaFilterBot ! sex```"
+                    message_text="serv
+                    h something\n\nEg:- <code>@LisaFilterBot ! sex</code> "
                 ),
             ),
         )
@@ -119,7 +120,7 @@ async def options(c: Client, m: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Download", callback_data=f"d_{m.text}",
+                        "Download", callback_data=f"^d{m.text}",
                     ),
                 ],[
                     InlineKeyboardButton(
