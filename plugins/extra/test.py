@@ -51,8 +51,7 @@ async def inline_search(c: Client, q: InlineQuery):
                 title="Search Anything",
                 description="Type something to search",
                 input_message_content=InputTextMessageContent(
-                    message_text="serv
-                    h something\n\nEg:- <code>@LisaFilterBot ! sex</code> "
+                    message_text="serch something\n\nEg:- <code>@LisaFilterBot ! sex</code> "
                 ),
             ),
         )
