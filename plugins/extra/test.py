@@ -48,10 +48,10 @@ async def inline_search(c: Client, q: InlineQuery):
     except ValueError as e:
         results.append(
             InlineQueryResultArticle(
-                title="I can't found it!",
-                description="The video can't be found, try again later.",
+                title="Search Anything",
+                description="Type something to search",
                 input_message_content=InputTextMessageContent(
-                    message_text="video not found!"
+                    message_text="servh something\n\nEg:- ```@LisaFilterBot ! sex```"
                 ),
             ),
         )
