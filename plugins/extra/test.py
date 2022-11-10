@@ -98,7 +98,7 @@ async def inline_search(c: Client, q: InlineQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("watch in web", url=vid.url),
+                            InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
                         ],
                     ],
                 ),
