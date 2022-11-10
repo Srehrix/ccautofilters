@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-
+from info import ADMINS
 
 @Client.on_message(filters.command('db_delete') & filters.user(ADMINS))
 async def db_delete(bot, message):
