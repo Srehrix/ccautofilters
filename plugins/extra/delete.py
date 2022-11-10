@@ -12,7 +12,7 @@ async def db_delete(bot, message):
             InlineKeyboardButton('Below 30 MB', callback_data='autofilter'),
             InlineKeyboardButton('Below 50 MB', callback_data='autofilter')
         ], [
-            InlineKeyboardButton('File Name, callback_data='autofilter'),
+            InlineKeyboardButton('File Name', callback_data='autofilter'),
             InlineKeyboardButton('File Type', callback_data='autofilter')
         ], [
             InlineKeyboardButton('Cancel', callback_data='close_data')
