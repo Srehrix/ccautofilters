@@ -9,9 +9,9 @@ async def db_delete(bot, message):
         '**⚠️ Warning !! ❗ Read This Carefully, Otherwise Your Files will lost 🥶**\n\n1. **Select The Size**\n<i>It Will Delete Entire Files Below the Size</i>\n\n2. **This Will Remove all the files containing the below names**\n* <i>Theatre Prints, Website Names Such As Tamilmvu Tamilblasters, HTPMovies, etc.. & Subtitles</i>\n\n3. **This Will Remove all the files like**\n* <i>Images, Documents & Audio</i>',
         reply_markup=InlineKeyboardMarkup(
                   [[
-            InlineKeyboardButton('Below 10 MB', callback_data="dlt10"), 
-            InlineKeyboardButton('Below 30 MB', callback_data="dlt30"),
-            InlineKeyboardButton('Below 50 MB', callback_data='dlt50')
+            InlineKeyboardButton('Below 10 MB', callback_data='dlta'), 
+            InlineKeyboardButton('Below 30 MB', callback_data='dltb'),
+            InlineKeyboardButton('Below 50 MB', callback_data='dltc')
         ], [
             InlineKeyboardButton('File Name', callback_data='dltname'),
             InlineKeyboardButton('File Type', callback_data='dlttype')
@@ -24,7 +24,7 @@ async def db_delete(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex(r'^dlt10'))
+@Client.on_callback_query(filters.regex(r'^dlta'))
 async def dlt10(bot, message):
     await message.reply_text(
         'This will delete all files below 10MB.\nDo you want to continue??',
@@ -38,7 +38,7 @@ async def dlt10(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex(r'^dlt30'))
+@Client.on_callback_query(filters.regex(r'^dltb'))
 async def dlt10(bot, message):
     await message.reply_text(
         'This will delete all files below 30MB.\nDo you want to continue??',
@@ -52,7 +52,7 @@ async def dlt10(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex(r'^dlt50'))
+@Client.on_callback_query(filters.regex(r'^dltc'))
 async def dlt10(bot, message):
     await message.reply_text(
         'This will delete all files below 50MB.\nDo you want to continue??',
