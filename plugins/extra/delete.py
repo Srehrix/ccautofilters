@@ -13,7 +13,7 @@ async def db_delete(bot, message):
             InlineKeyboardButton('File Name', callback_data='dltname'),
             InlineKeyboardButton('File Type', callback_data='dlttype')
             ], [
-            InlineKeyboardButton('Delete All Files', callback_data='dltall')
+            InlineKeyboardButton('Delete All Files', callback_data='dltll')
             ], [
             InlineKeyboardButton('Cancel', callback_data='close_data')
             ]]
