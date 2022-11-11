@@ -25,8 +25,7 @@ async def db_delete(bot, message):
 @Client.on_callback_query(filters.regex('dlta'))
 async def dlta(bot, message):
     buttons = [[
-            InlineKeyboardButton('Yes', callback_data='dlt_10')
-        ], [
+            InlineKeyboardButton('Yes', callback_data='dlt_a'),
             InlineKeyboardButton('No', callback_data='db_delete')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -34,47 +33,38 @@ async def dlta(bot, message):
         text="This will delete all files below 10MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
-@Client.on_callback_query(filters.regex(r'^dltb'))
+@Client.on_callback_query(filters.regex('dltb'))
 async def dltb(bot, message):
-    await message.message.reply_text(
-        'This will delete all files below 30MB.\nDo you want to continue??',
-        reply_markup=InlineKeyboardMarkup(
-                  [[
-            InlineKeyboardButton('Yes', callback_data='dlt_30')
-        ], [
+    buttons = [[
+            InlineKeyboardButton('Yes', callback_data='dlt_b'),
             InlineKeyboardButton('No', callback_data='db_delete')
-        ],]
-        ),
-        quote=True,
-    )
+        ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await reply_text(
+        text="This will delete all files below 30MB.\nDo you want to continue??",
+        reply_markup=reply_markup)
 
-@Client.on_callback_query(filters.regex(r'^dltc'))
+@Client.on_callback_query(filters.regex('dltc'))
 async def dltc(bot, message):
-    await message.reply_text(
-        'This will delete all files below 50MB.\nDo you want to continue??',
-        reply_markup=InlineKeyboardMarkup(
-                  [[
-            InlineKeyboardButton('Yes', callback_data='dlt_50')
-        ], [
+    buttons = [[
+            InlineKeyboardButton('Yes', callback_data='dlt_c'),
             InlineKeyboardButton('No', callback_data='db_delete')
-        ],]
-        ),
-        quote=True,
-    )
+        ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await reply_text(
+        text="This will delete all files below 50MB.\nDo you want to continue??",
+        reply_markup=reply_markup)
 
 @Client.on_callback_query(filters.regex('dltall'))
 async def dltall(bot, message):
-    await message.reply_text(
-        'This will delete all files below 10MB.\nDo you want to continue??',
-        reply_markup=InlineKeyboardMarkup(
-                  [[
-            InlineKeyboardButton('Yes', callback_data='dlt_all')
-        ], [
+    buttons = [[
+            InlineKeyboardButton('Yes', callback_data='dlt_all'),
             InlineKeyboardButton('No', callback_data='db_delete')
-        ],]
-        ),
-        quote=True,
-    )
+        ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await reply_text(
+        text="This will delete all files.\nDo you want to continue??",
+        reply_markup=reply_markup)
 
 @Client.on_callback_query(filters.regex('dlt_all'))
 async def delete_all_index_confirm(bot, message):
