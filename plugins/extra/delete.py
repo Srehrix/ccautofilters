@@ -23,3 +23,16 @@ async def db_delete(bot, message):
         quote=True,
     )
 
+@Client.on_callback_query(filters.regex('dlt10'))
+async def dlt10(bot, message):
+    await message.reply_text(
+        'This will delete all indexed files.\nDo you want to continue??',
+        reply_markup=InlineKeyboardMarkup(
+                  [[
+            InlineKeyboardButton('Yes', callback_data='dlt_10')
+        ], [
+            InlineKeyboardButton('No', callback_data='db_delete')
+        ],]
+        ),
+        quote=True,
+    )
