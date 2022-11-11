@@ -23,7 +23,7 @@ async def db_delete(bot, message):
         reply_markup=reply_markup)
 
 @Client.on_callback_query(filters.regex('db_back'))
-async def db_delete(bot, message):
+async def db_back(bot, message):
     buttons = [[
             InlineKeyboardButton('Below 10 MB', callback_data='dlta'), 
             InlineKeyboardButton('Below 30 MB', callback_data='dltb'),
