@@ -24,7 +24,7 @@ async def db_delete(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex(r'^dlta'))
+@Client.on_callback_query(filters.regex('dlta'))
 async def dlta(bot, message):
     await message.reply_text(
         'This will delete all files below 10MB.\nDo you want to continue??',
