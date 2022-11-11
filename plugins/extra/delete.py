@@ -86,7 +86,7 @@ async def dltall(bot, message):
         reply_markup=reply_markup)
 
 @Client.on_callback_query(filters.regex('dlt_all'))
-async def delete_all_index_confirm(bot, message):
+async def dtl_all(bot, message):
     await Media.collection.drop()
     await message.answer('Piracy Is Crime')
-    await message.message.edit('Succesfully Deleted All The Indexed Files.')
+    await message.message.edit_text('Succesfully Deleted All The Indexed Files.')
