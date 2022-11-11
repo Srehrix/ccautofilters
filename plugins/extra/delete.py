@@ -29,7 +29,7 @@ async def dlta(bot, message):
             InlineKeyboardButton('No', callback_data='db_delete')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await reply_text(
+    await message.reply_text(
         text="This will delete all files below 10MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
@@ -40,7 +40,7 @@ async def dltb(bot, message):
             InlineKeyboardButton('No', callback_data='db_delete')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await reply_text(
+    await message.reply_text(
         text="This will delete all files below 30MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
@@ -51,7 +51,7 @@ async def dltc(bot, message):
             InlineKeyboardButton('No', callback_data='db_delete')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await reply_text(
+    await message.reply_text(
         text="This will delete all files below 50MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
@@ -62,7 +62,7 @@ async def dltall(bot, message):
             InlineKeyboardButton('No', callback_data='db_delete')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await reply_text(
+    await message.reply_text(
         text="This will delete all files.\nDo you want to continue??",
         reply_markup=reply_markup)
 
