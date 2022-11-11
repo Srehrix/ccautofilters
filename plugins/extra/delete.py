@@ -37,7 +37,7 @@ async def db_back(bot, message):
             InlineKeyboardButton('Cancel', callback_data='close_data')
             ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_text(
+    await message.message.edit_text(
         text="**⚠️ Warning !! ❗ Read This Carefully, Otherwise Your Files will lost 🥶**\n\n1. **Select The Size**\n<i>It Will Delete Entire Files Below the Size</i>\n\n2. **This Will Remove all the files containing the below names**\n* <i>Theatre Prints, Website Names Such As Tamilmvu Tamilblasters, HTPMovies, etc.. & Subtitles</i>\n\n3. **This Will Remove all the files like**\n* <i>Images, Documents & Audio</i>",
         reply_markup=reply_markup)
 
@@ -59,7 +59,7 @@ async def dltb(bot, message):
             InlineKeyboardButton('No', callback_data='db_back')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.edit_text(
+    await message.message.edit_text(
         text="This will delete all files below 30MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
@@ -70,7 +70,7 @@ async def dltc(bot, message):
             InlineKeyboardButton('No', callback_data='db_back')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_text(
+    await message.message.edit_text(
         text="This will delete all files below 50MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
@@ -81,7 +81,7 @@ async def dltall(bot, message):
             InlineKeyboardButton('No', callback_data='db_back')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_text(
+    await message.message.edit_text(
         text="This will delete all files.\nDo you want to continue??",
         reply_markup=reply_markup)
 
