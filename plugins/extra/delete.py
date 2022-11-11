@@ -25,7 +25,7 @@ async def db_delete(bot, message):
     )
 
 @Client.on_callback_query(filters.regex(r'^dlta'))
-async def dlt10(bot, message):
+async def dlta(bot, message):
     await message.reply_text(
         'This will delete all files below 10MB.\nDo you want to continue??',
         reply_markup=InlineKeyboardMarkup(
@@ -39,7 +39,7 @@ async def dlt10(bot, message):
     )
 
 @Client.on_callback_query(filters.regex(r'^dltb'))
-async def dlt10(bot, message):
+async def dltb(bot, message):
     await message.reply_text(
         'This will delete all files below 30MB.\nDo you want to continue??',
         reply_markup=InlineKeyboardMarkup(
@@ -53,7 +53,7 @@ async def dlt10(bot, message):
     )
 
 @Client.on_callback_query(filters.regex(r'^dltc'))
-async def dlt10(bot, message):
+async def dltc(bot, message):
     await message.reply_text(
         'This will delete all files below 50MB.\nDo you want to continue??',
         reply_markup=InlineKeyboardMarkup(
@@ -67,7 +67,7 @@ async def dlt10(bot, message):
     )
 
 @Client.on_callback_query(filters.regex('dltall'))
-async def dlt10(bot, message):
+async def dltall(bot, message):
     await message.reply_text(
         'This will delete all files below 10MB.\nDo you want to continue??',
         reply_markup=InlineKeyboardMarkup(
