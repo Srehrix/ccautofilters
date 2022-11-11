@@ -74,7 +74,7 @@ async def dltc(bot, message):
         text="This will delete all files below 50MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
-@Client.on_callback_query(filters.regex('dltall'))
+@Client.on_callback_query(filters.regex('dltll'))
 async def dltall(bot, message):
     buttons = [[
             InlineKeyboardButton('Yes', callback_data='dlt_all'),
