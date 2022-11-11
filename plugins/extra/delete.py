@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from info import ADMINS
 from database.ia_filterdb import Media
 
-@Client.on_message(filters.command('db_delete') & filters.user(ADMINS))
+@Client.on_message(filters.command('db_delete'))
 async def db_delete(bot, message):
     buttons = [[
             InlineKeyboardButton('Below 10 MB', callback_data='dlta'), 
