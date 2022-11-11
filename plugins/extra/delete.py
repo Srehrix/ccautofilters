@@ -30,7 +30,7 @@ async def dlta(bot, message):
             InlineKeyboardButton('No', callback_data='db_delete')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await query.message.edit_text(
+    await message.edit_text(
         text="This will delete all files below 10MB.\nDo you want to continue??",
         reply_markup=reply_markup)
 
