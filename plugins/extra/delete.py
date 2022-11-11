@@ -24,7 +24,7 @@ async def db_delete(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex('dlt10'))
+@Client.on_callback_query(filters.regex(r'^dlt10'))
 async def dlt10(bot, message):
     await message.reply_text(
         'This will delete all files below 10MB.\nDo you want to continue??',
@@ -38,7 +38,7 @@ async def dlt10(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex('dlt30'))
+@Client.on_callback_query(filters.regex(r'^dlt30'))
 async def dlt10(bot, message):
     await message.reply_text(
         'This will delete all files below 30MB.\nDo you want to continue??',
@@ -52,7 +52,7 @@ async def dlt10(bot, message):
         quote=True,
     )
 
-@Client.on_callback_query(filters.regex('dlt50'))
+@Client.on_callback_query(filters.regex(r'^dlt50'))
 async def dlt10(bot, message):
     await message.reply_text(
         'This will delete all files below 50MB.\nDo you want to continue??',
