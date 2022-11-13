@@ -77,7 +77,7 @@ async def dltc(bot, message):
 @Client.on_callback_query(filters.regex('dltll'))
 async def dltall(bot, message):
     buttons = [[
-            InlineKeyboardButton('Yes', callback_data='dlt_all'),
+            InlineKeyboardButton('Yes', callback_data='dlt_ll'),
             InlineKeyboardButton('No', callback_data='db_back')
         ]]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -85,7 +85,7 @@ async def dltall(bot, message):
         text="This will delete all files.\nDo you want to continue??",
         reply_markup=reply_markup)
 
-@Client.on_callback_query(filters.regex('dlt_all'))
+@Client.on_callback_query(filters.regex('dlt_ll'))
 async def dtl_all(bot, message):
     await Media.collection.drop()
     await message.answer('Piracy Is Crime')
@@ -93,7 +93,4 @@ async def dtl_all(bot, message):
 
 @Client.on_callback_query(filters.regex('dlt_a))
 async def dtl_all(bot, message):
-    await Media
-    await message.answer('Piracy Is Crime')
-    await message.message.edit_text('Succesfully Deleted All The Indexed Files.')
-
+    
