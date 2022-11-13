@@ -90,3 +90,10 @@ async def dtl_all(bot, message):
     await Media.collection.drop()
     await message.answer('Piracy Is Crime')
     await message.message.edit_text('Succesfully Deleted All The Indexed Files.')
+
+@Client.on_callback_query(filters.regex('dlt_a))
+async def dtl_all(bot, message):
+    await Media
+    await message.answer('Piracy Is Crime')
+    await message.message.edit_text('Succesfully Deleted All The Indexed Files.')
+
