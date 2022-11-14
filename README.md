@@ -54,6 +54,15 @@ You can deploy this bot anywhere.
 
 <i>**[Watch Deploying Tutorial...](https://youtu.be/1G1XwEOnxxo)**</i>
 
+<details><summary>Deploy To Koyeb</summary>
+<p>
+<br>                 
+<a href="https://app.koyeb.com/deploy?type=git&repository=github.com/TEAM-PYRO-BOTZ/PYRO-RENAME-BOT&branch=main&name=pyro-rename-bot">
+  <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
