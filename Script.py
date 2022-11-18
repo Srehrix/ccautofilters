@@ -1,16 +1,25 @@
 class script(object):
     START_TXT = """𝙷𝙴𝙻𝙾 {},
-𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍"""
+𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍
+ 𝙅𝙤𝙞𝙣 @CinemaCompanyOffiz
+○ Notice 📙:-
+○Dont Spam Me...🤒
+😎 Powered by @CinemaCompanyofficials
+"""
     HELP_TXT = """𝙷𝙴𝚈 {}
-𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
-    ABOUT_TXT = """╔════❰ мovιe вoт ❱═❍⊱❁۪۪
+𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
+○ Notice 📙:-
+○Dont Spam Me...🤒
+😎 Powered by CinemaCompanyofficials
+"""
+    ABOUT_TXT = """<b><i>🤖 ᴍʏ ɴᴀᴍᴇ : <a href=http://cinemacompany_manager_bot><b>Cinema Company 🎬</b></a>\n
 ║╭━━━━━━━━━━━━━━━➣
 ║┣⪼📃ʙᴏᴛ : {}
-║┣⪼👦Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/VysakhTG>Vʏsᴀᴋʜ ᡧ</a>
-║┣⪼📡Hᴏsᴛᴇᴅ ᴏɴ : Hᴇʀᴏᴋᴜ
+║┣⪼👦Cʀᴇᴀᴛᴏʀ : <a href=https://t.me/sreehari3>SH ᡧ</a>
+║┣⪼📡Hᴏsᴛᴇᴅ ᴏɴ : KOYEB
 ║┣⪼🗣️Lᴀɴɢᴜᴀɢᴇ : Pʏᴛʜᴏɴ3
 ║┣⪼📚Lɪʙʀᴀʀʏ : Pʏʀᴏɢʀᴀᴍ 2.0.0 
-║┣⪼🗒️Vᴇʀsɪᴏɴ : 1.9.2
+║┣⪼🗒️Vᴇʀsɪᴏɴ : 1.0.1
 ║╰━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱❁۪۪
 """
@@ -69,7 +78,7 @@ Example:- /set_caption 📕 File Name: {filename}
 3. Buttons should be properly parsed as markdown format
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/EvaMariaBot)</code>
+<code>[Button Text](https://t.me/CinemaCompanyofficials)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
